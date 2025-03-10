@@ -1,0 +1,12 @@
+public class Main {
+	public static void main(String[] args) {
+		int x=5;
+		double b=x;
+		//widening type casting
+		System.out.println("the number is  "+b);
+		long c=(long)b;
+		//narrowing type casting
+		
+		System.out.println("the number is  " +c);
+	}
+}
