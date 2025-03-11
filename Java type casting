@@ -10,3 +10,4 @@ public class Main {
 		System.out.println("the number is  " +c);
 	}
 }
+//type casting or type conversion is the process of converting one data type to another data type
