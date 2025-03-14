@@ -1,0 +1,46 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Filecreate {
+    public static void main(String[] args) {
+        try {
+            // Creating the file
+            File a = new File("file.txt");
+            if (a.createNewFile()) {
+                System.out.println("File created successfully.");
+            } else {
+                System.out.println("File already exists.");
+            }
+
+            // Writing to the file
+            FileWriter d = new FileWriter("file.txt");
+            boolean c = a.canWrite();
+            if (c) {
+                System.out.println("File is ready to write the content.");
+                d.write("Hi, this is Ajith Kumar.");
+                d.close();
+                System.out.println("Successfully wrote to the file.");
+            } else {
+                System.out.println("Cannot write to the file.");
+            }
+
+            // Reading from the file
+            FileReader fileReader = new FileReader("file.txt");
+            Scanner v = new Scanner(fileReader);
+            System.out.println("Reading data from the file:");
+            while (v.hasNextLine()) {
+                String data = v.nextLine();
+                System.out.println(data);
+            }
+            v.close();
+            fileReader.close();
+
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}
