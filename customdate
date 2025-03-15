@@ -1,2 +1,11 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeformater;
+import java.time.GetDayOfWeek;
+public class CustomDate
+{
+   public static void main (String[]args)
+   {
+    LocalDateTime a=new LocalDateTime.now();
+    System.out.println(a);
+   }
+}
