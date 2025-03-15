@@ -1,11 +1,32 @@
+
 import java.time.LocalDateTime;
-import java.time.format.DateTimeformater;
-import java.time.GetDayOfWeek;
-public class CustomDate
-{
-   public static void main (String[]args)
-   {
-    LocalDateTime a=new LocalDateTime.now();
-    System.out.println(a);
-   }
+import java.time.format.DateTimeFormatter;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.Period;
+
+import java.util.*;
+
+public class CustomDate {
+    public static void main(String[] args) {
+        LocalDate a = LocalDate.now();
+        System.out.println(a);
+        DateTimeFormatter b=DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String c=a.format(b);
+        System.out.println(c);
+        Scanner d=new Scanner(System.in);
+        System.out.println("enter the year your birth :");
+        int e=d.nextInt();
+
+        System.out.println("enter the month your birth :");
+        int f=d.nextInt();
+        System.out.println("enter the date of your birth :");
+        int g=d.nextInt();
+        LocalDate h=LocalDate.of(e, f, g);
+        DateTimeFormatter i=DateTimeFormatter.ofPattern("dd-MM-yyy ");
+        String j=h.format(i);
+        System.out.println(j);
+        Period k=Period.between(h,a);
+        System.out.println("you are "+k.getYears()+" years "+k.getMonths()+" months  "+k.getDays()+"days older now");
+    }
 }
